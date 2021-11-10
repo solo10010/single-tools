@@ -18,7 +18,7 @@ if os.path.isdir(res.output) == False:
 
 def startX(url, cookies):
     try:
-        r = requests.get(url.rstrip('\n'), cookies=cookies)
+        r = requests.get(url.rstrip('\n'), cookies=cookies, verify=False)
         if r.status_code == 200:
             urlsplit = r.url.split("/")
             CountUrl = len(urlsplit) - 1
